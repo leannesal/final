@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='row'>
+        <h3>Edit no contract employee information</h3><hr>
+        <form method='post' action='{{url_for("edit_no_contract_employee",id=no_contract_info.id)}}'>
+            <p>
+                <label for="Firstname">Firstname</label>
+                <input type="text" name="Firstname" required class='form-control' value='{{no_contract_info.Firstname}}'>
+                </input>
+            </p>
+                
+            <p>
+                <label for="Lastname">Lastname</label>
+                <input type="text" name="Lastname" required class='form-control' value='{{no_contract_info.Lastname}}'>
+                </input>
+            </p>
+            <p>
+                <label for="Email">Email</label>
+                <input type="text" name="Email" required class='form-control' value='{{no_contract_info.Email}}'>
+                </input>
+            </p>
+
+            <p>
+                <label for="Contact">Contact</label>
+                <input type="integer" name="Contact" required class='form-control' value='{{no_contract_info.Contact}}'>
+                </input>
+            </p>
+
+            <p>
+                <label for="Role">Role</label>
+                <input type="text" name="Role" required class='form-control' value='{{no_contract_info.Role}}'>
+                </input>
+            </p>
+
+            <input type='submit' value='Submit' class='btn btn-primary'>
+        </form>
+        
+    </div>
+
+{% endblock %}

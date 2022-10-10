@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="title">{% block title %}Employees{% endblock %}</h1>
+
+    <p class='adding_button'><a href='{{url_for("new_contract_employee")}}' >Add employee</a></p>
+
+    <div class="content">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Joined</th>
+                <th>Role</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {% for employee in employees_info %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{employee.firstname}}</td>
+                    <td>{{employee.lastname}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.address}}</td>
+                    <td>{{employee.joined}}</td>
+                    <td>{{employee.role}}</td>
+                    <td><a href='{{url_for("edit_employee",id=employee.id)}}' class='btn-edit'>Edit</a></td>
+                    <td><a href='{{url_for("delete_employee",id=employee.id)}}' class='btn-delete' onclick='return confirm("Are you sure you want to delete")'>Delete</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+            
+    <p class='adding_button'><a href='{{url_for("new_no_contract_employee")}}'>Add non-contract employee</a></p>
+
+    <div class="content">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Role</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                {% for employee in no_contract_info %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{employee.firstname}}</td>
+                    <td>{{employee.lastname}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.contact}}</td>
+                    <td>{{employee.role}}</td>
+                    <td><a href='{{url_for("edit_no_contract_employee",id=employee.id)}}' class='btn-edit'>Edit</a></td>
+                    <td><a href='{{url_for("delete_no_contract_employee",id=employee.id)}}' class='btn-delete' onclick='return confirm("Are you sure you want to delete")'>Delete</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="message">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <div class="message_flash">{{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+.title {
+    font-size: 1.5em;
+    margin-left: 42%;
+    color: #192853;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+table{
+    width: 100%;
+}
+
+.message {
+    background-color: #f89406;
+    border-color: #e96506;
+    color: #ffffff;
+}
+
+.adding_button{
+    background-color: rgb(65, 91, 196);
+    color: #ffffff;
+    width: max-content;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.adding_button a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+}
+
+nav a {
+    color: #192853;
+    font-size: 1.5em;
+    margin-left: 50px;
+    text-decoration: none;
+}
+
+.auth-row, .row {
+    width: 200px;
+    clear: both;
+}
+
+.auth-row {
+    margin-left: 42%;
+
+}
+  
+input {
+    width: 100%;
+    clear: both;
+}
+
+.content { 
+    padding-bottom: 50px;
+
+}
+
+.admin {
+    margin-left: 42%;
+}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Create an admin account {% endblock %}</h1>
+    <div class="auth-row">
+        <form action="{{url_for('create_admin')}}" method="post">
+            <p>
+                <label for="name">Admin username</label>
+                <input type="text" name="name"
+                required class='form-control'>
+                </input>
+            </p>
+
+            <p>
+                <label for="email">Admin email</label>
+                <input type="email" name="email"
+                required class='form-control'>
+                </input>
+            </p>
+            
+            <p>
+                <label for="password">Password</label>
+                <input type="password" name="pass"
+                required class='form-control'>
+                </input>
+            </p>
+
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        
+    </div>
+{% endblock %}

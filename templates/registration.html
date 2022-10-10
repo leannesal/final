@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Registration {% endblock %}</h1>
+    <div class="auth-row">
+        <form method="post">
+            <p>
+                <label for="name">Username</label>
+                <input type="text" name="name"
+                required class='form-control'>
+                </input>
+            </p>
+
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email"
+                required class='form-control'>
+                </input>
+            </p>
+            
+            <p>
+                <label for="password">Password</label>
+                <input type="password" name="pass"
+                required class='form-control'>
+                </input>
+            </p>
+
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        
+    </div>
+{% endblock %}
